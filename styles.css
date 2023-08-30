@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(200, 50%, 60%);
+  color: white;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.navbar-link ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-link li {
+  list-style: none;
+}
+
+.navbar-link li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-link li:hover {
+  background-color: hsl(200, 50%, 40%);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  --padding: 1rem;
+  background-color: white;
+  border: 1px solid #777;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.card-header.card-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-header.card-image > img {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header.card-image > img {
+  transform: scale(1.025);
+}
+
+.card-header {
+  font-size: 1.5rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+.card-footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.btn {
+  background: hsl(200, 50%, 50%);
+  color: white;
+  border: none;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background: hsl(200, 50%, 60%);
+}
+
+.btn.btn-outline {
+  background: none;
+  border: 1px solid var(--color);
+  color: var(--color);
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-link {
+    display: none;
+    width: 100%;
+  }
+}
